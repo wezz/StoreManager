@@ -1,17 +1,22 @@
-# Window Reference store
+# Store Manager
 
 
 ## Installation
 ```
-npm install @wezz/window-reference-store
+npm install @wezz/store-manager
 ```
 
 ## Usage
-### Initialize Window Reference Store
+### Initialize  Store Manager
 ```
-import refStore from "@wezz/window-reference-store";
+import StoreManager from "@wezz/store-manager";
 // On document ready
-new refStore();
+const storeManager = new StoreManager('prefix');
+// Save to localStorage
+storeManager.Set('keyname', {'jsondatakey': 'jsondatavalue}, true);
+// Save to sessionStorage
+storeManager.Set('keyname', {'jsondatakey': 'jsondatavalue});
+storeManager.Get('keyname');
 ```
 
 ### See demo/example1.js for more advanced usage
