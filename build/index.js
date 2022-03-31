@@ -1,0 +1,13 @@
+/*!
+ * 
+ *   @wezz/store-manager v0.0.8
+ *   https://github.com/wezz/StoreManager
+ *
+ *   Copyright (c) Wezz Balk (https://github.com/wezz)
+ *
+ *   This source code is licensed under the MIT license found in the
+ *   LICENSE file in the root directory of this source tree.
+ *
+ */
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.StoreManager=t():e.StoreManager=t()}(self,(function(){return(()=>{"use strict";var e={346:(e,t)=>{var o=function(){function e(e){void 0===e&&(e="cache"),this.storageTypes={permanent:"localStorage",temporary:"sessionStorage"},this.prefix=e}return e.prototype.getStorageMedium=function(e){void 0===e&&(e=!0);var t=e?this.storageTypes.permanent:this.storageTypes.temporary;return void 0!==window[t]?window[t]:null},e.prototype.Has=function(e){return void 0!==this.Get(this.prefix+"-"+e)},e.prototype.Get=function(e){var t=this.getStorageMedium(!1),o=this.getStorageMedium(!0),r=!1,i=null;if(t&&o){try{i=t.getItem(this.prefix+"-"+e),r=null!==(i=this.toJSONIfJSON(i))}catch(e){}if(!r)try{i=o.getItem(this.prefix+"-"+e),r=null!==(i=this.toJSONIfJSON(i))}catch(e){}}return i},e.prototype.toJSONIfJSON=function(e){return"string"!=typeof e||0!==e.indexOf("{")&&0!==e.indexOf("[")||(e=JSON.parse(e)),e},e.prototype.Save=function(e,t,o){void 0===o&&(o=!0),console.warn("StoreManager.Save is deprecated"),this.Set(e,t,o)},e.prototype.Set=function(e,t,o){void 0===o&&(o=!0);var r=this.getStorageMedium(o),i=!1;if(r){"object"==typeof t&&(t=JSON.stringify(t));try{r.setItem(this.prefix+"-"+e,t),i=!0}catch(e){console.error("Unable to save object",e)}}return i},e.prototype.Remove=function(e){var t=this.getStorageMedium(!0),o=this.getStorageMedium(!1);t&&t.removeItem(this.prefix+"-"+e),o&&o.removeItem(this.prefix+"-"+e)},e}();t.Z=o},138:(e,t,o)=>{o.r(t),o.d(t,{default:()=>r});const r=o(346).Z}},t={};function o(r){if(t[r])return t[r].exports;var i=t[r]={exports:{}};return e[r](i,i.exports,o),i.exports}return o.d=(e,t)=>{for(var r in t)o.o(t,r)&&!o.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),o.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o(138)})()}));
+//# sourceMappingURL=index.js.map
