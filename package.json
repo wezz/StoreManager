@@ -1,6 +1,6 @@
 {
   "name": "@wezz/store-manager",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A script to manage local and session storage",
   "main": "build/index.js",
   "types": "build/index.d.ts",
