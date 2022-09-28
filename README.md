@@ -13,9 +13,9 @@ import StoreManager from "@wezz/store-manager";
 // On document ready
 const storeManager = new StoreManager('prefix');
 // Save to localStorage
-storeManager.Set('keyname', {'jsondatakey': 'jsondatavalue}, true);
+storeManager.Set('keyname', {'jsondatakey': 'jsondatavalue'}, true);
 // Save to sessionStorage
-storeManager.Set('keyname', {'jsondatakey': 'jsondatavalue});
+storeManager.Set('keyname', {'jsondatakey': 'jsondatavalue'});
 storeManager.Get('keyname');
 ```
 
