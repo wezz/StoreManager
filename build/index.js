@@ -1,6 +1,6 @@
 /*!
  * 
- *   @wezz/store-manager v0.0.10
+ *   @wezz/store-manager v0.0.11
  *   https://github.com/wezz/StoreManager
  *
  *   Copyright (c) Wezz Balk (https://github.com/wezz)
