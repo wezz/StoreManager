@@ -29,11 +29,14 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    library: 'StoreManager',
-    libraryTarget: 'umd'
+    globalObject: 'typeof global !== \'undefined\' ? global : this',
+    library: {
+      name: 'StoreManager',
+      type: 'umd',
+    }
   },
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [new TerserPlugin({
       extractComments: false
     })],
