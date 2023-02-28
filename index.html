@@ -44,7 +44,7 @@
             statusElm.innerHTML += `StoreManager found \n`;
           }
           console.log('window.StoreManager', window.StoreManager)
-          const storeInstance = new window.StoreManager.default("customprefix");
+          const storeInstance = new window.StoreManager("customprefix");
           console.log('storeInstance', storeInstance)
           if (storeInstance) {
             statusElm.innerHTML += `Store Manager initiated on with prefix 'customprefix' \n`;
