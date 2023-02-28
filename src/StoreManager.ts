@@ -21,17 +21,12 @@ export default class StoreManager {
     this.prefix = _prefix;
   }
 
-  private storageTypes = {
-    permanent: "localStorage",
-    temporary: "sessionStorage",
-  };
-
   private getStorageMedium(permanent: boolean = true) {
-    const storageType = permanent
-      ? this.storageTypes.permanent
-      : this.storageTypes.temporary;
-    if (typeof window[storageType] !== "undefined") {
-      return window[storageType];
+    if (permanent && typeof window.localStorage !== "undefined") {
+      return window.localStorage;
+    }
+    if (permanent && typeof window.sessionStorage !== "undefined") {
+      return window.sessionStorage;
     }
     return null;
   }
@@ -61,7 +56,7 @@ export default class StoreManager {
     return data;
   }
 
-  private toJSONIfJSON(data) {
+  private toJSONIfJSON(data: any) {
     if (
       typeof data === "string" &&
       (data.indexOf("{") === 0 || data.indexOf("[") === 0)
@@ -100,13 +95,4 @@ export default class StoreManager {
       sessionStorage.removeItem(`${this.prefix}-${key}`);
     }
   }
-}
-
-export interface StoreManagerClass {
-  constructor(_prefix?: string);
-  Get(key: string): any;
-  Has(key: string): boolean;
-  Save(key: string, data: any, permanent?: boolean): boolean;
-  Set(key: string, data: any, permanent?: boolean): boolean;
-  Remove(key: string): void;
 }
