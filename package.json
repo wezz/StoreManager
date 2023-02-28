@@ -1,6 +1,6 @@
 {
   "name": "@wezz/store-manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A script to manage local and session storage",
   "type": "module",
   "main": "./dist/storemanager.umd.cjs",
@@ -22,7 +22,6 @@
     "pack": "npm run build",
     "trypublish": "npm publish --access public || true"
   },
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/wezz/StoreManager"
