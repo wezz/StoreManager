@@ -1,5 +1,9 @@
 # Store Manager
+This is a script to make it easier to talk to localStorage and sessionStorage. 
 
+It will automatically transform stored JSON to objects. 
+
+It also makes use of prefixed store values. So you can have multiple instances of the storage manager using the same store values without having conflicts.
 
 ## Installation
 ```
@@ -9,7 +13,7 @@ npm install @wezz/store-manager
 ## Usage
 ### Initialize  Store Manager
 ```
-import StoreManager from "@wezz/store-manager";
+import { StoreManager } from "@wezz/store-manager";
 // On document ready
 const storeManager = new StoreManager('prefix');
 // Save to localStorage
@@ -26,5 +30,5 @@ Clone this repo
 Run
 ``` npm install ```
 
-To run the interactive demo, run 
-``` npm run demo ```
+To run the demo, run 
+``` npm run dev ```
