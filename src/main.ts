@@ -1,3 +1,3 @@
 import StoreManager from './StoreManager';
 
-(window as any).StoreManager = new StoreManager();
+(window as any).StoreManager = StoreManager;
