@@ -22,13 +22,15 @@ export default class StoreManager {
   }
 
   private getStorageMedium(permanent = true) {
-    if (permanent && typeof window?.localStorage !== "undefined") {
+    if (typeof window === "undefined" || typeof window.localStorage === "undefined") {
+      return null;
+    }
+    if (permanent) {
       return window.localStorage;
     }
-    if (typeof window?.sessionStorage !== "undefined") {
+    else {
       return window.sessionStorage;
     }
-    return null;
   }
   public Has(key: string) {
     return typeof this.Get(`${this.prefix}-${key}`) !== "undefined";
