@@ -17,15 +17,15 @@ The last boolean defines if the values should be stored past the current session
 "use strict";
 export default class StoreManager {
   private prefix: string;
-  constructor(_prefix: string = "cache") {
+  constructor(_prefix = "cache") {
     this.prefix = _prefix;
   }
 
-  private getStorageMedium(permanent: boolean = true) {
-    if (permanent && typeof window.localStorage !== "undefined") {
+  private getStorageMedium(permanent = true) {
+    if (permanent && typeof window?.localStorage !== "undefined") {
       return window.localStorage;
     }
-    if (permanent && typeof window.sessionStorage !== "undefined") {
+    if (typeof window?.sessionStorage !== "undefined") {
       return window.sessionStorage;
     }
     return null;
@@ -44,13 +44,15 @@ export default class StoreManager {
         data = this.toJSONIfJSON(data);
 
         success = data !== null;
-      } catch (e) {}
+      } catch (e) {
+        /* empty */ }
       if (!success) {
         try {
           data = permStorage.getItem(`${this.prefix}-${key}`);
           data = this.toJSONIfJSON(data);
           success = data !== null;
-        } catch (e) {}
+        } catch (e) {
+          /* empty */ }
       }
     }
     return data;
