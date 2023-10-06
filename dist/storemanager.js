@@ -1,13 +1,13 @@
 var u = Object.defineProperty;
-var S = (o, e, t) => e in o ? u(o, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : o[e] = t;
-var f = (o, e, t) => (S(o, typeof e != "symbol" ? e + "" : e, t), t);
+var c = (o, e, t) => e in o ? u(o, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : o[e] = t;
+var f = (o, e, t) => (c(o, typeof e != "symbol" ? e + "" : e, t), t);
 class g {
   constructor(e = "cache") {
     f(this, "prefix");
     this.prefix = e;
   }
   getStorageMedium(e = !0) {
-    return e && typeof (window == null ? void 0 : window.localStorage) < "u" ? window.localStorage : typeof (window == null ? void 0 : window.sessionStorage) < "u" ? window.sessionStorage : null;
+    return typeof window > "u" || typeof window.localStorage > "u" ? null : e ? window.localStorage : window.sessionStorage;
   }
   Has(e) {
     return typeof this.Get(`${this.prefix}-${e}`) < "u";
