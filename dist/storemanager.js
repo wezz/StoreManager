@@ -7,7 +7,7 @@ class g {
     this.prefix = e;
   }
   getStorageMedium(e = !0) {
-    return e && typeof window.localStorage < "u" ? window.localStorage : e && typeof window.sessionStorage < "u" ? window.sessionStorage : null;
+    return e && typeof (window == null ? void 0 : window.localStorage) < "u" ? window.localStorage : typeof (window == null ? void 0 : window.sessionStorage) < "u" ? window.sessionStorage : null;
   }
   Has(e) {
     return typeof this.Get(`${this.prefix}-${e}`) < "u";
