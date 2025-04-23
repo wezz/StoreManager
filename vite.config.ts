@@ -10,8 +10,12 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'storemanager',
-      fileName: 'storemanager',
+      fileName: "index",
     },
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      rollupTypes: true,
+    }),
+  ],
 });
