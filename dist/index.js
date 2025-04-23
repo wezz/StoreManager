@@ -1,6 +1,6 @@
 var u = Object.defineProperty;
 var c = (o, e, t) => e in o ? u(o, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : o[e] = t;
-var f = (o, e, t) => (c(o, typeof e != "symbol" ? e + "" : e, t), t);
+var f = (o, e, t) => c(o, typeof e != "symbol" ? e + "" : e, t);
 class g {
   constructor(e = "cache") {
     f(this, "prefix");
