@@ -22,13 +22,15 @@ export default class StoreManager {
   }
 
   private getStorageMedium(permanent = true) {
-    if (typeof window === "undefined" || typeof window.localStorage === "undefined") {
+    if (
+      typeof window === "undefined" ||
+      typeof window.localStorage === "undefined"
+    ) {
       return null;
     }
     if (permanent) {
       return window.localStorage;
-    }
-    else {
+    } else {
       return window.sessionStorage;
     }
   }
@@ -47,14 +49,16 @@ export default class StoreManager {
 
         success = data !== null;
       } catch (e) {
-        /* empty */ }
+        /* empty */
+      }
       if (!success) {
         try {
           data = permStorage.getItem(`${this.prefix}-${key}`);
           data = this.toJSONIfJSON(data);
           success = data !== null;
         } catch (e) {
-          /* empty */ }
+          /* empty */
+        }
       }
     }
     return data;
