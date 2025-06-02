@@ -1,1 +1,1 @@
-export { default as StoreManager } from './StoreManager';
+export { default as StoreManager } from "./StoreManager";
