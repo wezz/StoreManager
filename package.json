@@ -42,13 +42,16 @@
     "window"
   ],
   "devDependencies": {
-    "@eslint/js": "~9.25.1",
-    "@types/node": "~22.14.1",
-    "eslint": "~9.25.1",
-    "prettier": "~3.5.3",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "~8.31.0",
-    "vite": "~6.3.2",
-    "vite-plugin-dts": "~4.5.3"
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^22.14.1",
+    "eslint": "^9.39.4",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0",
+    "vite": "^6.4.2",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "overrides": {
+    "brace-expansion@1": "^1.1.12"
   }
 }
