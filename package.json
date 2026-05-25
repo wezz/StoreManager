@@ -1,6 +1,6 @@
 {
   "name": "@wezz/store-manager",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "A script to manage local and session storage",
   "type": "module",
   "main": "./dist/index.umd.cjs",
