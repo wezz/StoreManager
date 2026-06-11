@@ -25,6 +25,14 @@ storeManager.Get('keyname');
 
 ### See demo/example1.js for more advanced usage
 
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md). This project follows
+[Keep a Changelog](https://keepachangelog.com/) and
+[Semantic Versioning](https://semver.org/). On release, move the
+`## [Unreleased]` entries into a dated version section, bump `version`, run
+`npm run check:exports`, then `npm publish`.
+
 ## Development & Demo
 Clone this repo
 Run
